@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+---
+<BaseLayout
+  title="Innlegg og debatt | Martin Ekran"
+  description="Faglige innlegg og refleksjoner fra Martin Ekran om ledelse, offentlig sektor, helse, digitalisering og kunstig intelligens."
+  canonicalPath="/innlegg"
+>
+  <section class="page-hero shell">
+    <p class="eyebrow">Innlegg</p>
+    <h1>Innlegg og debatt</h1>
+    <p class="lead compact">
+      Jeg bruker først og fremst LinkedIn til å dele faglige refleksjoner, kommentere utviklingen i
+      offentlig sektor og delta i diskusjoner om ledelse, teknologi og helse- og omsorgstjenester.
+    </p>
+    <p>
+      Denne siden fungerer som en inngang til det jeg publiserer. Originalinnleggene og diskusjonene
+      finner du på LinkedIn.
+    </p>
+    <a class="button primary" href={site.linkedIn}>Følg innleggene på LinkedIn <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <section class="section shell" aria-labelledby="fagspor">
+    <div class="section-heading">
+      <p class="eyebrow">Fagspor</p>
+      <h2 id="fagspor">Temaene går igjen over tid</h2>
+    </div>
+    <div class="topic-list">
+      <div><span>01</span><strong>Ledelse og gjennomføring</strong><p>Retning, prioritering, kultur og endring i komplekse organisasjoner.</p></div>
+      <div><span>02</span><strong>Helse- og omsorgstjenester</strong><p>Demografi, kapasitet, kompetanse og bærekraftige tjenester.</p></div>
+      <div><span>03</span><strong>Digital transformasjon</strong><p>Samspillet mellom teknologi, organisasjon, arbeidsprosesser og ledelse.</p></div>
+      <div><span>04</span><strong>Kunstig intelligens</strong><p>Praktisk og ansvarlig bruk av KI i arbeid, ledelse og offentlig sektor.</p></div>
+    </div>
+  </section>
+
+  <section class="section shell quiet-panel">
+    <p>Diskusjonen tar jeg gjerne på LinkedIn.</p>
+    <a class="text-link" href={site.linkedIn}>Martin Ekran på LinkedIn <span aria-hidden="true">↗</span></a>
+  </section>
+</BaseLayout>

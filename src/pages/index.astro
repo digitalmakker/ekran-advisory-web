@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+---
+<BaseLayout>
+  <section class="hero shell">
+    <p class="eyebrow">Martin Ekran</p>
+    <h1>Faglige innlegg og refleksjoner</h1>
+    <p class="lead">
+      Jeg skriver jevnlig på LinkedIn om ledelse, helse- og omsorgstjenester, digitalisering,
+      kunstig intelligens og utviklingen av offentlig sektor.
+    </p>
+    <p class="hero-copy">
+      LinkedIn er hovedkanalen min for faglige innlegg og deltakelse i den offentlige debatten.
+      Denne siden samler det jeg skriver om og gir litt bakgrunn for temaene jeg er opptatt av.
+    </p>
+    <div class="actions" aria-label="Hovedvalg">
+      <a class="button primary" href={site.linkedIn}>Se innleggene mine på LinkedIn <span aria-hidden="true">↗</span></a>
+      <a class="button secondary" href="/bakgrunn">Om bakgrunnen min</a>
+    </div>
+  </section>
+
+  <section class="section shell" aria-labelledby="temaer">
+    <div class="section-heading">
+      <p class="eyebrow">Temaer</p>
+      <h2 id="temaer">Det jeg oftest skriver om</h2>
+    </div>
+    <div class="topic-grid">
+      <article>
+        <h3>Ledelse</h3>
+        <p>Hvordan ledere skaper retning, prioriterer og bygger organisasjoner som lærer og leverer.</p>
+      </article>
+      <article>
+        <h3>Offentlig sektor</h3>
+        <p>Om bærekraftige tjenester, styring, omstilling og hva som skal til for å lykkes i praksis.</p>
+      </article>
+      <article>
+        <h3>Helse og omsorg</h3>
+        <p>Utvikling av tjenester i møte med demografi, kompetansebehov og knappere ressurser.</p>
+      </article>
+      <article>
+        <h3>Digitalisering og KI</h3>
+        <p>Hvordan teknologi og kunstig intelligens kan brukes ansvarlig til å forbedre arbeid og tjenester.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section shell editorial-callout" aria-labelledby="dialog">
+    <div>
+      <p class="eyebrow">Faglig dialog</p>
+      <h2 id="dialog">Diskusjonen skjer på LinkedIn</h2>
+      <p>Innleggene publiseres der først, og det er også der jeg følger opp kommentarer og faglige diskusjoner.</p>
+    </div>
+    <a class="text-link" href={site.linkedIn}>Gå til LinkedIn <span aria-hidden="true">↗</span></a>
+  </section>
+
+  <section class="section shell site-purpose" aria-labelledby="om-siden">
+    <h2 id="om-siden">Om siden</h2>
+    <p>
+      Dette er Martin Ekrans personlige faglige side. Den brukes som en samleside for faglige innlegg,
+      refleksjoner og offentlig tilgjengelig bakgrunnsinformasjon. LinkedIn er hovedkanalen for
+      publisering og faglig dialog.
+    </p>
+    <p data-nosnippet>Siden markedsfører ikke rådgivningstjenester eller nye oppdrag.</p>
+  </section>
+</BaseLayout>

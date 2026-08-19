@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../config/site';
+---
+<BaseLayout
+  title="Juridisk informasjon | Martin Ekran"
+  description="Juridisk informasjon og personvern for Martin Ekrans personlige faglige nettsted."
+  canonicalPath="/juridisk-informasjon"
+>
+  <section class="page-hero shell narrow">
+    <p class="eyebrow">Juridisk</p>
+    <h1>Juridisk informasjon</h1>
+    <p class="lead compact">
+      {site.legalName} er det juridiske virksomhetsnavnet for enkeltpersonforetaket som eies av Martin Ekran,
+      organisasjonsnummer {site.organisationNumber}.
+    </p>
+  </section>
+
+  <section class="section shell legal-copy narrow">
+    <h2>Formålet med nettstedet</h2>
+    <p>
+      Nettstedet er Martin Ekrans personlige faglige publiseringsside og en inngang til faglig aktivitet på LinkedIn.
+      Det er ikke bygget som en nettbutikk, bestillingsløsning eller tjenestekatalog.
+    </p>
+
+    <h2>Personvern og sporing</h2>
+    <p>
+      Selve nettstedskoden bruker per nå ikke analyseverktøy, annonsepiksler, nyhetsbrev, kontaktskjema eller egne
+      sporingscookies. Hosting- og sikkerhetsleverandører kan behandle nødvendige tekniske opplysninger, som IP-adresse
+      og forespørselslogger, for å levere og beskytte nettstedet.
+    </p>
+
+    <h2>Eksterne lenker</h2>
+    <p>
+      Lenker til LinkedIn fører til en ekstern tjeneste. Når du følger en slik lenke, gjelder den eksterne tjenestens
+      egne vilkår og personvernpraksis.
+    </p>
+
+    <h2>E-posthenvendelser</h2>
+    <p>
+      Dersom Martin mottar en e-posthenvendelse, behandles innholdet så langt det er nødvendig for å lese, besvare og
+      følge opp henvendelsen. Nettstedet publiserer ikke en egen kontaktadresse eller et kontaktskjema.
+    </p>
+  </section>
+</BaseLayout>

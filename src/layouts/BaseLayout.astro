@@ -1,0 +1,68 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site } from '../config/site';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+}
+
+const {
+  title = site.title,
+  description = site.description,
+  canonicalPath = Astro.url.pathname
+} = Astro.props;
+const canonical = new URL(canonicalPath, site.url).toString();
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Martin Ekran',
+  url: site.url,
+  sameAs: [site.linkedIn],
+  jobTitle: site.currentRole,
+  worksFor: {
+    '@type': 'Organization',
+    name: site.currentEmployer
+  }
+};
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: site.name,
+  url: site.url,
+  description: site.description
+};
+---
+<!doctype html>
+<html lang="nb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

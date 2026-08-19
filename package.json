@@ -1,0 +1,21 @@
+{
+  "name": "ekran-advisory-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro build",
+    "qa:source": "node scripts/qa-source.mjs",
+    "qa:built": "node scripts/qa-built.mjs",
+    "qa": "npm run qa:source && npm run build && npm run qa:built"
+  },
+  "dependencies": {
+    "astro": "7.1.0"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

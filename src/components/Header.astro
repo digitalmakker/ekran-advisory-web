@@ -1,0 +1,31 @@
+---
+import { site } from '../config/site';
+const currentPath = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Forside' },
+  { href: '/innlegg', label: 'Innlegg' },
+  { href: '/bakgrunn', label: 'Bakgrunn' }
+];
+---
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="Martin Ekran – forside">{site.name}</a>
+
+    <nav class="desktop-nav" aria-label="Hovedmeny">
+      {links.map((link) => (
+        <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>
+      ))}
+      <a class="linkedin-link" href={site.linkedIn}>LinkedIn <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <details class="mobile-nav">
+      <summary aria-label="Åpne meny">Meny</summary>
+      <nav aria-label="Mobilmeny">
+        {links.map((link) => (
+          <a href={link.href} aria-current={currentPath === link.href ? 'page' : undefined}>{link.label}</a>
+        ))}
+        <a class="linkedin-link" href={site.linkedIn}>LinkedIn <span aria-hidden="true">↗</span></a>
+      </nav>
+    </details>
+  </div>
+</header>
